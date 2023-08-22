@@ -1,0 +1,51 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+    <ul id="post_list">
+        {% for post in page_obj %}
+            <li>
+                <div class="user_post">
+                    <div class="user_info">
+                        <p id="post_username">Posted by <a href="{% url 'user_page' user_id=post.user.id %}">{{ post.user }}</a></p>
+                        <p id="post_timestamp">{{ post.timestamp }}</p>
+                    </div>
+
+                    <p id="post_body">{{ post.body_text }}</p>
+
+                    <form id="post_opt">
+                      {% csrf_token %}
+                        <button class="like_button" data-post-id="{{ post.id }}">
+                          <p class="post_likes">&#x1F49C; {{ post.likes }}</p>
+                        </button>
+                      {% if user.id == post.user_id %}
+                        <a id="edit_opt" href="#">EDIT POST</a>
+                      {% endif %}
+                    </form>
+
+                  </div>
+                </li>
+        {% empty %}
+          <li>No Posts.</li>
+        {% endfor %}
+      </ul>
+
+      <div class="pagination" id="pagination" >
+        <span class="step-links">
+
+          {% if page_obj.has_previous %}
+            <a id="pag_opt" href="?page=1">&laquo; first</a>
+            <a id="pag_opt" href="?page={{ page_obj.previous_page_number }}">previous</a>
+          {% endif %}
+
+          <span class="current">
+            {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+          </span>
+
+          {% if page_obj.has_next %}
+            <a id="pag_opt" href="?page={{ page_obj.next_page_number }}">next</a>
+            <a id="pag_opt" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+          {% endif %}
+
+        </span>
+      </div>
+{% endblock %}

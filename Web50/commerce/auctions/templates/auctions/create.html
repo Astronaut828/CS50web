@@ -1,0 +1,64 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    <h2>Create Listing</h2>
+      <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="listing_title">Listing Title: </label><br>
+            <input id="listing_title" type="text" name="listing_title" required><br>
+
+            <label for="listing_description">Listing Description: </label><br>
+            <textarea id="listing_description" name="listing_description" required></textarea><br>
+
+            <label for="category">Category: </label><br>
+            <select id="category" name="category" required>
+                <option value="electronics">Electronics</option>
+                <option value="books">Books</option>
+                <option value="clothing">Clothing, Shoes, and Jewelry</option>
+                <option value="home_kitchen">Home and Kitchen</option>
+                <option value="health_personal_care">Health and Personal Care</option>
+                <option value="beauty_personal_care">Beauty and Personal Care</option>
+                <option value="toys_games">Toys and Games</option>
+                <option value="sports_outdoors">Sports and Outdoors</option>
+                <option value="automotive">Automotive</option>
+                <option value="tools_home_improvement">Tools and Home Improvement</option>
+            </select><br>
+
+            <label for="starting_bid">Starting Bid: </label><br>
+            <input id="starting_bid" type="number" step="0.01" name="starting_bid" required><br>
+
+            <label for="listing_pic_url">Listing Picture (URL): </label><br>
+            <input id="listing_pic_url" type="text" name="listing_pic_url" onkeyup="renderImage()"><br>
+
+            <input id="list_item" type="submit" value="List Item">
+        </form>
+    <label id="image_container_title" for="image_container">Chosen Image</label>
+    <div id="image_container"></div>
+    <!-- Java script / Item Picture-->
+    <script>
+        function renderImage() {
+            var imageContainer = document.getElementById("image_container");
+            var imageUrl = document.getElementById("listing_pic_url").value;
+
+            // Clear the image container
+            imageContainer.innerHTML = "";
+
+            // Only render the image if a non-empty URL is provided
+            if (imageUrl.trim() !== "") {
+                // Create an image element and set its source to the URL
+                var image = document.createElement("img");
+
+                image.onload = function() {
+                    // Append the image to the image container once it's loaded
+                    imageContainer.appendChild(image);
+                };
+
+                image.src = imageUrl;
+            }
+        }
+
+        // Call the renderImage function when the page loads
+        window.addEventListener("load", renderImage);
+    </script>
+{% endblock %}

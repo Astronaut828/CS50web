@@ -1,0 +1,53 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Bought Items</h2>
+    {% if bought_items %}
+        <ul>
+            {% for listing in bought_items %}
+                <li class="listing-item">
+                    <br>
+                    <div id="image_container_active" data-listing-pic-url="{{ listing.listing_pic }}"></div>
+                    <div class="listing-details">
+                        <h3><a href="{% url 'item' listing.id %}">{{ listing.listing_title }}</a></h3>
+                        <p>Purchase Price: ${{ listing.current_price|default:listing.starting_bid }}</p>
+                        <p style="max-width: 500px; word-break: break-all;">{{ listing.listing_description }}</p>
+                        <p class="created-time">Bought From Seller: {{ listing.user.username }}</p>
+                    </div>
+                    <br>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Items Purchased.</p>
+    {% endif %}
+    <!-- Java script / Item Picture-->
+    <script>
+        function renderImage() {
+            var imageContainers = document.querySelectorAll("[data-listing-pic-url]");
+
+            imageContainers.forEach(function(container) {
+                var imageUrl = container.getAttribute("data-listing-pic-url");
+
+                // Clear the image container
+                container.innerHTML = "";
+
+                // Only render the image if a non-empty URL is provided
+                if (imageUrl.trim() !== "") {
+                    // Create an image element and set its source to the URL
+                    var image = document.createElement("img");
+
+                    image.onload = function() {
+                        // Append the image to the image container once it's loaded
+                        container.appendChild(image);
+                    };
+
+                    image.src = imageUrl;
+                }
+            });
+        }
+
+        // Call the renderImage function when the page loads
+        window.addEventListener("load", renderImage);
+    </script>
+{% endblock %}

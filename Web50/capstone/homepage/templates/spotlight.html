@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 id="page-label">SPOTLIGHT</h1>
+
+<div id="portfolio-textbox">This area is dedicated to displaying my professional work and personal projects. From design sketches to fully-fledged applications, I will be sharing a variety of projects that demonstrate my range of skills and areas of interest. This space is currently under development, so please check back soon for updates and feel free to reach out if you have any inquiries or comments. I'm looking forward to sharing my work with you!</div>
+
+<!--blog grid with pagination-->
+<div class="site-container">
+    <main>
+        <div class="blog">
+            {% for post in posts %}
+            <div class="blog-post">
+                <div class="thumbnail">
+                    <img src="{{ post.thumbnail }}" alt="{{ post.title }}">
+                </div>
+                <div class="blog-content">
+                    <a class="artist_link" href="{{ post.featured_link }}" target="_blank">{{ post.title_link }}</a>
+                    <h3> {{ post.title }} </h3>
+                    <p>{{ post.description }}</p>
+                    <a class="artist_link" href="{{ post.website }}" target="_blank">{{ post.website }}</a><br>
+                    <a class="artist_link" href="{{ post.twitter }}" target="_blank">Twitter</a>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="pagination-container">
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if posts.has_previous %}
+                            <a class="pag_item" href="?page=1">&laquo;</a>
+                            <a class="pag_item" href="?page={{ posts.previous_page_number }}">&lsaquo;</a>
+                        {% endif %}
+
+                        <span id="pag_item_nav" class="current">
+                            {{ posts.number }} of {{ posts.paginator.num_pages }}
+                        </span>
+                    {% if posts.has_next %}
+                        <a class="pag_item" href="?page={{ posts.next_page_number }}">&rsaquo;</a>
+                        <a class="pag_item" href="?page={{ posts.paginator.num_pages }}">&raquo;</a>
+                    {% endif %}
+                 </span>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

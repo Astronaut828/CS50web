@@ -1,0 +1,81 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+  {% if user.is_authenticated %}
+  <div id="profile_banner">
+      <h1 id="user_name">{{ profile_user.username }}</h1>
+
+      <div id="follow_count">
+          <p id="following_count">Following: {{ following_count }}</p>
+          <p id="followers_count">Followers: {{ followers_count }}</p>
+      </div>
+
+      {% if user.id != profile_user.id %}
+          <div id="follow_btn">
+              <button id="follow_button" data-profile-id="{{ profile_user.id }}" data-csrf-token="{{ csrf_token }}">
+                  {% if following_status %}
+                      Unfollow
+                  {% else %}
+                      Follow
+                  {% endif %}
+              </button>
+          </div>
+      {% endif %}
+  </div>
+
+  <ul id="post_list">
+
+      {% for post in page_obj %}
+      <li>
+        <div class="user_post" id="post_{{ post.id }}">
+          <div class="user_info">
+            <p id="post_username">Posted by <a href="{% url 'user_page' user_id=post.user.id %}">{{ post.user }}</a></p>
+            <p id="post_timestamp">{{ post.timestamp }}</p>
+          </div>
+
+          <p id="post_body">{{ post.body_text }}</p>
+
+          <form id="post_opt">
+              {% csrf_token %}
+                <button class="like_button" data-post-id="{{ post.id }}">
+                  <p class="post_likes">&#x1F49C; {{ post.likes }}</p>
+                </button>
+              {% if user.id == post.user_id %}
+                <a id="edit_opt" href="#" data-post-id="{{ post.id }}">EDIT POST</a>
+              {% endif %}
+          </form>
+        </div>
+
+        <div class="edit_post" id="edit_{{ post.id }}" style="display: none;">
+          <form class="edit_post_form" id="edit_form_{{ post.id }}">
+            {% csrf_token %}
+            <textarea class="edit_text" id="edit_text_{{ post.id }}" rows="4">{{ post.body_text }}</textarea>
+            <button class="save_button" data-post-id="{{ post.id }}">Save</button>
+          </form>
+        </div>
+
+      </li>
+      {% empty %}
+      <li>No Posts.</li>
+      {% endfor %}
+    </ul>
+
+    <div class="pagination" id="pagination">
+      <span class="step-links">
+        {% if page_obj.has_previous %}
+        <a id="pag_opt" href="?page=1">&laquo; first</a>
+        <a id="pag_opt" href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+          {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+        <a id="pag_opt" href="?page={{ page_obj.next_page_number }}">next</a>
+        <a id="pag_opt" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+      </span>
+    </div>
+  {% endif %}
+{% endblock %}

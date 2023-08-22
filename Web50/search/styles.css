@@ -1,0 +1,73 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  form input[type="text"], form select {
+    height: 35px;
+    width: 450px;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  form input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+  }
+  form {
+    text-align: center;
+  }
+  #searchbar {
+    border: 1px solid gray;
+    border-radius: 30px;
+  }
+  .search {
+    font-size: 20px;
+  }
+
+
+  .search-btn {
+    display: grid;
+    padding: 5px;
+    grid-column-gap: 5px;
+    grid-template-columns: 200px 200px;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn {
+    background-color: lightgray;
+    height: 40px;
+    width: 150px;
+    padding: 10px 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+  }
+  #advanced {
+    height: 50px;
+    width: 150px;
+    padding: 10px 5px;
+    border-radius: 5px;
+    background-color: blue;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+  }
+
+
+  #links {
+    display: grid;
+    padding: 20px;
+    grid-column-gap: 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+

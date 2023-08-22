@@ -1,0 +1,77 @@
+{% extends "encyclopedia/layout.html" %}
+{% load static %}
+    <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+{% block title %}
+    Edit Entry
+{% endblock %}
+
+{% block body %}
+    <h3 class="header">Thank you for your interest in contributing.</h3>
+    <h4>Edit This Entry: {{ title }}</h4>
+
+    <form method="POST" action="{% url 'edit_entry' %}">
+        {% csrf_token %}
+        <p>
+        Entry Title:
+        <input id="titleboxid" type="text" name="title" value="{{ title }}">
+        </p>
+        <p>
+        <textarea class="edit_entry" id="textboxid" name="edit_body">{{ body }}</textarea>
+        </p>
+        <p>
+        <input class="btn" type="submit" value="Submit Edit">
+        </p>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h4>Element</h4>
+            </div>
+            <div class="grid-item">
+                <h4>Basic Markdown Syntax</h4>
+            </div>
+
+            <div class="grid-item">
+                <h4>Heading</h4>
+            </div>
+            <div class="grid-item">
+                <p>## H2<br>
+                   ### H3</p>
+            </div>
+
+            <div class="grid-item">
+                <h4>Bold</h4>
+            </div>
+            <div class="grid-item">
+                <p>**bold text**</p>
+            </div>
+
+            <div class="grid-item">
+                <h4>Italic</h4>
+            </div>
+            <div class="grid-item">
+                <p>*italicized text*</p>
+            </div>
+
+            <div class="grid-item">
+                <h4>Ordered List</h4>
+            </div>
+            <div class="grid-item">
+                <ol>
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ol>
+            </div>
+
+            <div class="grid-item">
+                <h4>Unordered List</h4>
+            </div>
+            <div class="grid-item">
+                <ul>
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ul>
+            </div>
+        </div>
+    </form>
+{% endblock %}

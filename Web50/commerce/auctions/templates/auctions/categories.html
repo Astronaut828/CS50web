@@ -1,0 +1,17 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <label for="category"><h1>Category: </h1></label><br>
+    <ul id="category-list">
+        <li><a href="/category?category=electronics">Electronics</a></li>
+        <li><a href="/category?category=books">Books</a></li>
+        <li><a href="/category?category=clothing">Clothing, Shoes, and Jewelry</a></li>
+        <li><a href="/category?category=home_kitchen">Home and Kitchen</a></li>
+        <li><a href="/category?category=health_personal_care">Health and Personal Care</a></li>
+        <li><a href="/category?category=beauty_personal_care">Beauty and Personal Care</a></li>
+        <li><a href="/category?category=toys_games">Toys and Games</a></li>
+        <li><a href="/category?category=sports_outdoors">Sports and Outdoors</a></li>
+        <li><a href="/category?category=automotive">Automotive</a></li>
+        <li><a href="/category?category=tools_home_improvement">Tools and Home Improvement</a></li>
+    </ul>
+{% endblock %}

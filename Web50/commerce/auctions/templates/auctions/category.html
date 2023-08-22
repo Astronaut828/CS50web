@@ -1,0 +1,50 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Category: {{ category_name }}</h2>
+      <ul>
+        {% for listing in listings %}
+            <li>
+              <div>
+                <div id="image_container_active" data-listing-pic-url="{{ listing.listing_pic }}"></div>
+              </div>
+              <div>
+                <h5><a href="{% url 'item' listing.id %}">{{ listing.listing_title }}</a></h5>
+                <p>Current Bid: ${{ listing.current_price|default:listing.starting_bid }}</p>
+                <p class="created-time">Seller: {{ listing.user.username }}</p>
+              </div>
+            </li>
+        {% empty %}
+            <li>No listings found.</li>
+        {% endfor %}
+    </ul>
+    <!-- Java script / Item Picture-->
+    <script>
+      function renderImage() {
+          var imageContainers = document.querySelectorAll("[data-listing-pic-url]");
+
+          imageContainers.forEach(function(container) {
+              var imageUrl = container.getAttribute("data-listing-pic-url");
+
+              // Clear the image container
+              container.innerHTML = "";
+
+              // Only render the image if a non-empty URL is provided
+              if (imageUrl.trim() !== "") {
+                  // Create an image element and set its source to the URL
+                  var image = document.createElement("img");
+
+                  image.onload = function() {
+                      // Append the image to the image container once it's loaded
+                      container.appendChild(image);
+                  };
+
+                  image.src = imageUrl;
+              }
+          });
+      }
+
+      // Call the renderImage function when the page loads
+      window.addEventListener("load", renderImage);
+  </script>
+{% endblock %}

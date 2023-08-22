@@ -1,0 +1,161 @@
+/* spotlight */
+.site-container {
+    width: 85%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Blog */
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 30px;
+    padding-bottom: 30px;
+    grid-gap: 60px;
+    justify-content: center;
+    z-index: 10;
+}
+
+.blog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    justify-content: center;
+    grid-gap: 60px;
+    margin-bottom: 40px;
+}
+
+.thumbnail {
+    display: block;
+    overflow: hidden;
+    height: 250px;
+    width: 100%;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-post {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--white);
+    margin: 10px 0;
+    padding: 16px;
+}
+
+.blog-content {
+    margin-top: 24px;
+}
+
+p {
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 1.2rem 0;
+}
+
+.artist_link {
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin: 1.6rem 0;
+    color: var(--black);
+}
+
+@media screen and (max-width: 900px) {
+    .blog {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 60px;
+        justify-items: center;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .blog {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog-post {
+        width: 95%;
+        margin: 24px auto;
+    }
+
+    .thumbnail {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .label {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .label {
+        font-size: 16px;
+    }
+}
+
+
+/* Pagination */
+.pagination-container {
+    position: absolute;
+    bottom: 5px;
+    left: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    margin-bottom: 10px;
+}
+
+.pag_item {
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    background-color: var(--darkgrey);
+    font-size: 16px;
+    height: 12px;
+    text-decoration: none;
+    padding: 2px 3px;
+}
+
+@media only screen and (max-width: 768px) {
+    .pagination-container {
+
+        width: 80%;
+    }
+
+    .pag_item {
+        font-size: 12px;
+        height: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .pagination-container {
+
+        width: 60%;
+    }
+
+    .pag_item {
+        font-size: 8px;
+        height: 8px;
+    }
+}
