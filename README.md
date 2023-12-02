@@ -13,7 +13,7 @@ Welcome to my coursework repository for the web app development course! In this 
 - Follow Google's aesthetics.
 
 [Software  Screencast](https://youtu.be/T5LZE62alA8)<br>
-For code details, check the [GitHub repository](https://github.com/Astronaut828/CS50web/tree/main/Web50/search).
+For code details, check out the [GitHub Folder](https://github.com/Astronaut828/CS50web/tree/main/Web50/search).
 
 ## Challenge 2: Wiki Encyclopedia Specifications
 
