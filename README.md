@@ -133,7 +133,7 @@ For code details, check out the [GitHub Folder](https://github.com/Astronaut828/
    - Update like counts with JavaScript.
 
 [Software  Screencast](https://youtu.be/uupZn5EdgEg)<br>
-For code details, visit the [GitHub repository](https://github.com/Astronaut828/CS50web/tree/main/Web50/project4).
+For code details, check out the [GitHub Folder](https://github.com/Astronaut828/CS50web/tree/main/Web50/project4).
 
 ## Challenge 6: Final Project Requirements
 
