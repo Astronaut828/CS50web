@@ -1,5 +1,4 @@
-# CS50web
-CS50web Coursework
+# CS50web Coursework
 
 # Web App Development Coursework
 
