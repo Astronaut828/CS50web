@@ -100,7 +100,7 @@ For code details, check out the [GitHub Folder](https://github.com/Astronaut828/
    - Pre-fill recipient, subject, and body.
 
 [Software  Screencast](https://youtu.be/9PYlNqAVDjY)<br>
-For code details, visit the [GitHub repository](https://github.com/Astronaut828/CS50web/tree/main/Web50/mail).
+For code details, check out the [GitHub Folder](https://github.com/Astronaut828/CS50web/tree/main/Web50/mail).
 
 ## Challenge 5: Social Network Specifications
 
