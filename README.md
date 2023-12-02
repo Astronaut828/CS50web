@@ -72,7 +72,7 @@ For code details, check out the [GitHub Folder](https://github.com/Astronaut828/
    - Admins manage listings, comments, and bids.
 
 [Software  Screencast](https://youtu.be/RXG8DdTIrfs)<br>
-For code details, visit the [GitHub repository](https://github.com/Astronaut828/CS50web/tree/main/Web50/commerce).
+For code details, check out the [GitHub Folder](https://github.com/Astronaut828/CS50web/tree/main/Web50/commerce).
 
 ## Challenge 4: Email Client Specifications
 
