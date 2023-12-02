@@ -1,7 +1,5 @@
 # CS50web Coursework
 
-# Web App Development Coursework
-
 Welcome to my coursework repository for the web app development course! In this course, we delved deep into building web applications using Python, JavaScript, and SQL. We explored frameworks like Django, React, and Bootstrap, covering essential topics such as database design, scalability, security, and user experience. Through hands-on projects, I gained experience in creating APIs, building interactive UIs, and deploying applications on cloud services like GitHub and Heroku. This repository showcases my journey in learning web app development principles, languages, and tools.
 
 ## Challenge 1: Search Website Specifications
