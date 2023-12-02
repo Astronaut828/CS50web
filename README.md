@@ -160,5 +160,5 @@ For code details, check out the [GitHub Folder](https://github.com/Astronaut828/
    - Aim for a README.md of around 500 words.
 
 [Software  Screencast](https://youtu.be/yxwf0vKrkRo)<br>
-For code details and complete project documentation, refer to the [GitHub repository](https://github.com/Astronaut828/CS50web/tree/main/Web50/capstone).
+For code details and complete project documentation, check out the [GitHub Folder](https://github.com/Astronaut828/CS50web/tree/main/Web50/capstone).
 
