@@ -15,6 +15,7 @@ Welcome to my coursework repository for the web app development course! In this 
 - "I'm Feeling Lucky" button for instant results.
 - Follow Google's aesthetics.
 
+[Software  Screencast](https://youtu.be/T5LZE62alA8)<br>
 For code details, check the [GitHub repository](https://github.com/Astronaut828/CS50web/tree/main/Web50/search).
 
 ## Challenge 2: Wiki Encyclopedia Specifications
@@ -44,6 +45,7 @@ For code details, check the [GitHub repository](https://github.com/Astronaut828/
 7. **Markdown to HTML:**
    - Convert Markdown content to HTML for display.
 
+[Software  Screencast](https://youtu.be/EQt81pY21BM)<br>
 For code details, visit the [GitHub repository](https://github.com/Astronaut828/CS50web/tree/main/Web50/wiki).
 
 ## Challenge 3: Auction Site Specifications
@@ -72,6 +74,7 @@ For code details, visit the [GitHub repository](https://github.com/Astronaut828/
 7. **Admin Interface:**
    - Admins manage listings, comments, and bids.
 
+[Software  Screencast](https://youtu.be/RXG8DdTIrfs)<br>
 For code details, visit the [GitHub repository](https://github.com/Astronaut828/CS50web/tree/main/Web50/commerce).
 
 ## Challenge 4: Email Client Specifications
@@ -99,6 +102,7 @@ For code details, visit the [GitHub repository](https://github.com/Astronaut828/
    - Allow replying to emails.
    - Pre-fill recipient, subject, and body.
 
+[Software  Screencast](https://youtu.be/9PYlNqAVDjY)<br>
 For code details, visit the [GitHub repository](https://github.com/Astronaut828/CS50web/tree/main/Web50/mail).
 
 ## Challenge 5: Social Network Specifications
@@ -131,6 +135,7 @@ For code details, visit the [GitHub repository](https://github.com/Astronaut828/
    - Users toggle post likes asynchronously.
    - Update like counts with JavaScript.
 
+[Software  Screencast](https://youtu.be/uupZn5EdgEg)<br>
 For code details, visit the [GitHub repository](https://github.com/Astronaut828/CS50web/tree/main/Web50/project4).
 
 ## Challenge 6: Final Project Requirements
@@ -157,5 +162,6 @@ For code details, visit the [GitHub repository](https://github.com/Astronaut828/
    - List Python packages in a requirements.txt if needed.
    - Aim for a README.md of around 500 words.
 
+[Software  Screencast](https://youtu.be/yxwf0vKrkRo)<br>
 For code details and complete project documentation, refer to the [GitHub repository](https://github.com/Astronaut828/CS50web/tree/main/Web50/capstone).
 
