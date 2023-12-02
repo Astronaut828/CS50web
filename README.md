@@ -43,7 +43,7 @@ For code details, check out the [GitHub Folder](https://github.com/Astronaut828/
    - Convert Markdown content to HTML for display.
 
 [Software  Screencast](https://youtu.be/EQt81pY21BM)<br>
-For code details, visit the [GitHub repository](https://github.com/Astronaut828/CS50web/tree/main/Web50/wiki).
+For code details, check out the [GitHub Folder](https://github.com/Astronaut828/CS50web/tree/main/Web50/wiki).
 
 ## Challenge 3: Auction Site Specifications
 
