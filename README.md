@@ -52,7 +52,7 @@ For code details, check out the [GitHub Folder](https://github.com/Astronaut828/
 
 2. **Create Listing:**
    - Users can create listings with title, description, and starting bid.
-   - Optionally, add image URL and category.
+   - (Optionally) add image URL and category.
 
 3. **Active Listings:**
    - Default page displays all active listings.
